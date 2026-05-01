@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Kura | Seleção de Obras</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; color: #333; }
+    </style>
+    <script>
+        // Captura o ID da URL (?id=...)
+        const params = new URLSearchParams(window.location.search);
+        const listId = params.get('id');
+
+        // URL do seu Script Viewer no Google Workspace
+        const googleAppUrl = "https://script.google.com/a/macros/kuraarte.com.br/s/AKfycbw6iYZVUeXaV7Q8fmQiHZ3QZVmEvsHwcBlR4z3cwGLe1A4WfgK16LCPn3MM_3Fbj9mx/exec";
+
+        if (listId) {
+            // Redireciona mantendo o parâmetro intacto
+            window.location.replace(googleAppUrl + "?id=" + listId);
+        } else {
+            document.body.innerHTML = "<div><h2>Kura</h2><p>Identificador da seleção não encontrado. Verifique o link.</p></div>";
+        }
+    </script>
+</head>
+<body>
+    <div>Carregando seleção...</div>
+</body>
+</html>
